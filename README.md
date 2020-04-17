@@ -15,7 +15,7 @@ Running configuration from:  ./
 
 2020-04-09T09:12:28.504+0100 [DEBUG] Statefile does not exist
 2020-04-09T09:12:28.504+0100 [INFO]  Creating Container: ref=minecraft
-2020-04-09T09:12:28.562+0100 [DEBUG] Image exists in local cache: image=nicholasjackson/minecraft:latest
+2020-04-09T09:12:28.562+0100 [DEBUG] Image exists in local cache: image=hashicraft/minecraft:latest
 2020-04-09T09:12:28.562+0100 [INFO]  Creating Container: ref=minecraft
 ```
 
