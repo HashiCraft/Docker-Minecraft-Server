@@ -118,6 +118,25 @@ RCON_ENABLED=3fdf32dss29$#c1
 #### Default - null
 
 
+### WHITELIST_ENABLED
+Enable the Minecraft server player whitelist?
+
+Note: You should always enable the whitelist when a server is connected to the public internet.
+
+Users can be added to the whitelist using the following command from either the server or RCom terminal.
+
+```
+whitelist add <USERNAME>
+```
+
+#### Example
+```
+WHITELIST_ENABLED=true
+```
+
+#### Default - true
+
+
 ## Running locally
 
 ```shell
