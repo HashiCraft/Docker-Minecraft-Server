@@ -1,7 +1,3 @@
----
-  title: HashiCraft Minecraft server
----
-
 # HashiCraft Minecraft Server
 
 ![](./images/hashicraft_logo.png)
