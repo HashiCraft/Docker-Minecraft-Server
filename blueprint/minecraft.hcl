@@ -30,23 +30,23 @@ container "minecraft" {
   }
   
   env {
-    key = "MINECRAFT_RCON_PASSWORD"
+    key = "RCON_PASSWORD"
     value = "password"
   }
   
   env {
-    key = "MINECRAFT_RCON_ENABLED"
+    key = "RCON_ENABLED"
     value = "true"
   }
 
   # Install default Mods and World
   env {
     key = "WORLD_BACKUP"
-    value = "https://github.com/hashicraft/mc/releases/download/v0.0.1/world.tar.gz"
+    value = "https://github.com/nicholasjackson/hashicraft/releases/download/v0.0.0/world2.tar.gz"
   }
   
   env {
     key = "MODS_BACKUP"
-    value = "https://github.com/hashicraft/mc/releases/download/v0.0.1/mods.tar.gz"
+    value = "https://github.com/nicholasjackson/hashicraft/releases/download/v0.0.0/mods.tar.gz"
   }
 }

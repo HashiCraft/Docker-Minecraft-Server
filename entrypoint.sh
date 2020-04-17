@@ -4,25 +4,29 @@
 if [ "${WORLD_BACKUP}" != "" ]; then
   if [ ! "$(ls -A /minecraft/world)" ]; then 
     echo "Installing default world ${WORLD_BACKUP}"
+    
+    if [ ! -d "/minecraft/world" ]; then
+      mkdir /minecraft/world
+    fi
+   
     cd /tmp && \
       wget -O world.tar.gz ${WORLD_BACKUP} && \
-      tar -xzf world.tar.gz && \
-      mv ./world/* /minecraft/world/ && \
+      tar -C /minecraft/world -xzf world.tar.gz --strip 1 && \
       rm world.tar.gz
   fi
 fi
 
 if [ "${MODS_BACKUP}" != "" ]; then 
   if [ ! "$(ls -A /minecraft/mods)" ]; then 
+    echo "Installing default mods ${MODS_BACKUP}"
+    
     if [ ! -d "/minecraft/mods" ]; then
       mkdir /minecraft/mods
     fi
 
-    echo "Installing default mods ${MODS_BACKUP}"
     cd /tmp && \
       wget -O mods.tar.gz ${MODS_BACKUP} && \
-      tar -xzf mods.tar.gz && \
-      mv ./mods/* /minecraft/mods/ && \
+      tar -C /minecraft/mods -xzf mods.tar.gz --strip 1 && \
       rm mods.tar.gz
   fi
 fi
@@ -60,4 +64,4 @@ eval "echo \"$(cat /server.properties)\"" > /minecraft/server.properties
 
 # Start the server
 cd /minecraft
-java -Xmx${JAVA_MEMORY} -Xms${JAVA_MEMORY} -jar forge-1.12.2-14.23.5.2768-universal.jar nogui
+java -Xmx${JAVA_MEMORY} -Xms${JAVA_MEMORY} -Dfml.queryResult=confirm -jar forge-1.12.2-14.23.5.2768-universal.jar nogui

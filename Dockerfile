@@ -24,8 +24,10 @@ COPY ./entrypoint.sh /minecraft/entrypoint.sh
 COPY ./server.properties /server.properties
 
 # Set defaults for environment variables
+ENV MINECRAFT_PORT 25565
+ENV RCON_PORT 27015
 ENV JAVA_MEMORY 1G
 ENV MINECRAFT_RCON_ENABLED false
-ENV MINECRAFT_WHITELIST_ENABLED false
+ENV MINECRAFT_WHITELIST_ENABLED true
 
 ENTRYPOINT [ "/minecraft/entrypoint.sh" ]

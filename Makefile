@@ -2,7 +2,7 @@ DOCKER_NAME=hashicraft/minecraft
 DOCKER_VERSION=v1.12.2
 
 build:
-	docker build -t ${DOCKER_NAME}:${DOCKER_VERSION} docker/
+	docker build -t ${DOCKER_NAME}:${DOCKER_VERSION} .
 
 build_and_push: build
 	docker push ${DOCKER_NAME}:${DOCKER_VERSION}
