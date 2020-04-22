@@ -72,6 +72,17 @@ MINECRAFT_PORT=25565
 #### Default - 25565
 
 
+### ALLOW_NETHER
+Enable the Nether underworld for the server
+
+#### Example
+```
+ALLOW_NETHER=true
+```
+
+#### Default - false
+
+
 ### MINECRAFT_MOTD
 Message of the day presented to users when they log in.
 
