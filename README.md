@@ -50,6 +50,18 @@ MODS_BACKUP=https://github.com/nicholasjackson/hashicraft/releases/download/v0.0
 #### Default - null
 
 
+### RESOURCE_PACK
+Download a compressed folder in zip format containing Minecraft resource pack, clients joining the server who have resource packs
+enabled will automatically download and apply this resource pack.
+
+#### Example
+```
+RESOURCE_PACK=https://github.com/HashiCraft/terraform_minecraft_azure_containers/releases/download/files/KawaiiWorld1.12.zip
+```
+
+#### Default - null
+
+
 ### JAVA_MEMORY
 Configures how much memory is allocated to the Java virtual machine.
 
