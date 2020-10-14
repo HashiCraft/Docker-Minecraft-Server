@@ -64,4 +64,4 @@ eval "echo \"$(cat /server.properties)\"" > /minecraft/server.properties
 
 # Start the server
 cd /minecraft
-java -Xmx${JAVA_MEMORY} -Xms${JAVA_MEMORY} -Dfml.queryResult=confirm -jar forge-1.16.3-34.1.19-installer.jar nogui
+java -Xmx${JAVA_MEMORY} -Xms${JAVA_MEMORY} -Dfml.queryResult=confirm -jar forge-1.16.3-34.1.0.jar nogui

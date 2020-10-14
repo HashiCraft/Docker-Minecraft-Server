@@ -1,8 +1,8 @@
-FROM openjdk:8-slim
+FROM openjdk:8
 
 WORKDIR /minecraft
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget libfreetype6
 
 # Install rcon
 RUN wget https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8_linux_amd64.tar.gz && \
@@ -11,8 +11,8 @@ RUN wget https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8
   mv rcon-cli /usr/local/bin
 
 # Setup the server
-RUN wget https://github.com/HashiCraft/Docker-Minecraft-Server/releases/download/forge/forge-1.16.3-34.1.19-installer.jar && \
-  java -jar forge-1.16.3-34.1.19-installer.jar --installServer
+RUN wget https://github.com/HashiCraft/Docker-Minecraft-Server/releases/download/forge/forge-1.16.3-34.1.0-installer.jar && \
+  java -jar forge-1.16.3-34.1.0-installer.jar --installServer
 
 # Copy the signed eula
 COPY ./eula.txt eula.txt
