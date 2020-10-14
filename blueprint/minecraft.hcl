@@ -1,6 +1,6 @@
 container "minecraft" {
   image {
-    name = "nicholasjackson/minecraft:v1.12.2"
+    name = "hashicraft/minecraft:v1.16.3"
   }
 
   volume {
@@ -30,6 +30,11 @@ container "minecraft" {
   }
   
   env {
+    key = "WHITELIST_ENABLE"
+    value = "false"
+  }
+  
+  env {
     key = "RCON_PASSWORD"
     value = "password"
   }
@@ -42,11 +47,6 @@ container "minecraft" {
   # Install default Mods and World
   env {
     key = "WORLD_BACKUP"
-    value = "https://github.com/nicholasjackson/hashicraft/releases/download/v0.0.0/world2.tar.gz"
-  }
-  
-  env {
-    key = "MODS_BACKUP"
-    value = "https://github.com/nicholasjackson/hashicraft/releases/download/v0.0.0/mods.tar.gz"
+    value = "https://github.com/HashiCraft/digital-ocean-tide/releases/download/v0.0.0/world.tar.gz"
   }
 }

@@ -11,7 +11,7 @@ if [ "${WORLD_BACKUP}" != "" ]; then
    
     cd /tmp && \
       wget -O world.tar.gz ${WORLD_BACKUP} && \
-      tar -C /minecraft/world -xzf world.tar.gz --strip 1 && \
+      tar -C /minecraft/world -xzf world.tar.gz && \
       rm world.tar.gz
   fi
 fi
@@ -26,7 +26,7 @@ if [ "${MODS_BACKUP}" != "" ]; then
 
     cd /tmp && \
       wget -O mods.tar.gz ${MODS_BACKUP} && \
-      tar -C /minecraft/mods -xzf mods.tar.gz --strip 1 && \
+      tar -C /minecraft/mods -xzf mods.tar.gz && \
       rm mods.tar.gz
   fi
 fi
@@ -64,4 +64,4 @@ eval "echo \"$(cat /server.properties)\"" > /minecraft/server.properties
 
 # Start the server
 cd /minecraft
-java -Xmx${JAVA_MEMORY} -Xms${JAVA_MEMORY} -Dfml.queryResult=confirm -jar forge-1.12.2-14.23.5.2768-universal.jar nogui
+java -Xmx${JAVA_MEMORY} -Xms${JAVA_MEMORY} -Dfml.queryResult=confirm -jar forge-1.16.3-34.1.19-installer.jar nogui

@@ -5,16 +5,14 @@ WORKDIR /minecraft
 RUN apt-get update && apt-get install -y wget
 
 # Install rcon
-RUN wget https://github.com/itzg/rcon-cli/releases/download/1.4.7/rcon-cli_1.4.7_linux_amd64.tar.gz && \
-  tar -xzf rcon-cli_1.4.7_linux_amd64.tar.gz && \
-  rm rcon-cli_1.4.7_linux_amd64.tar.gz && \
+RUN wget https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8_linux_amd64.tar.gz && \
+  tar -xzf rcon-cli_1.4.8_linux_amd64.tar.gz && \
+  rm rcon-cli_1.4.8_linux_amd64.tar.gz && \
   mv rcon-cli /usr/local/bin
 
 # Setup the server
-RUN wget https://github.com/nicholasjackson/mc/releases/download/v0.0.0/forge-1.12.2-14.23.5.2768-installer.tar.gz && \
-  tar -xzf forge-1.12.2-14.23.5.2768-installer.tar.gz && \
-  rm forge-1.12.2-14.23.5.2768-installer.tar.gz && \
-  java -jar forge-1.12.2-14.23.5.2768-installer.jar --installServer
+RUN wget https://github.com/HashiCraft/Docker-Minecraft-Server/releases/download/forge/forge-1.16.3-34.1.19-installer.jar && \
+  java -jar forge-1.16.3-34.1.19-installer.jar --installServer
 
 # Copy the signed eula
 COPY ./eula.txt eula.txt

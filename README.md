@@ -25,7 +25,8 @@ To see a demo of this Image being deployed to Azure Container Images, checkout e
 Configuration of the Mincraft server is completed through the following Environment variables:
 
 ### WORLD_BACKUP
-Download a world backup archive in tar.gz format from the given URL and copy the contents to /minecraft/world when the server starts.
+Download a world backup archive in tar.gz format from the given URL and copy the contents to /minecraft/world when the server starts. It is expected
+that the .tar.gz archive only has the world data at the root level.
 
 Note: This operation will only take place when the /minecraft/world folder is empty
 
@@ -38,9 +39,10 @@ WORLD_BACKUP=https://github.com/nicholasjackson/hashicraft/releases/download/v0.
 
 
 ### MODS_BACKUP
-Download a compressed folder in tar.gz format containing Minecraft mods and extract to /minecraft/mods when the server starts.
+Download a compressed folder in tar.gz format containing Minecraft mods and extract to /minecraft/mods when the server
+starts. It is expected that the .tar.gz file has the mods at the root level.
 
-Note: This operation will only take place when the /minecraft/world folder is empty
+Note: This operation will only take place when the /minecraft/mods folder is empty
 
 #### Example
 ```
