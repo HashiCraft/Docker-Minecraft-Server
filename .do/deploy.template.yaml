@@ -8,9 +8,9 @@ spec:
     git:
       branch: main
       repo_clone_url: https://github.com/HashiCraft/Docker-Minecraft-Server.git
+    http_port: 25565
+    internal_ports: [25565]
     envs:
-      - key: PORT
-        value: "25565"
       - key: WORLD_BACKUP
         value: https://github.com/HashiCraft/digital-ocean-deploy/releases/download/v0.0.0/world.tar.gz
       - key: MODS_BACKUP
