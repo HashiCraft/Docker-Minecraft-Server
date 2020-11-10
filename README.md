@@ -21,6 +21,8 @@ To see a demo of this Image being deployed to Azure Container Images, checkout e
 
 [https://www.youtube.com/watch?v=zL4Xt7CyuDE&t=1s](https://www.youtube.com/watch?v=zL4Xt7CyuDE&t=1s)
 
+[![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/HashiCraft/Docker-Minecraft-Server/tree/deploy)
+
 ## Configuration
 
 Configuration of the Mincraft server is completed through the following Environment variables:
