@@ -13,3 +13,5 @@ spec:
         value: https://github.com/HashiCraft/digital-ocean-deploy/releases/download/v0.0.0/world.tar.gz
       - key: MODS_BACKUP
         value: https://github.com/HashiCraft/digital-ocean-deploy/releases/download/v0.0.0/mods.tar.gz
+      - key: JAVA_MEMORY
+        value: 512MB

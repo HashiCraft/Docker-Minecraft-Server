@@ -21,6 +21,9 @@ To see a demo of this Image being deployed to Azure Container Images, checkout e
 
 [https://www.youtube.com/watch?v=zL4Xt7CyuDE&t=1s](https://www.youtube.com/watch?v=zL4Xt7CyuDE&t=1s)
 
+## Deploy to Digital Ocean
+Need a server to play online with your friends, try deploying this server to Digital Ocean Apps. Please note: at present when deploying to DO Apps your world data will NOT be saved across deploys or restarts. 
+
 [![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/HashiCraft/Docker-Minecraft-Server/tree/deploy)
 
 ## Configuration
