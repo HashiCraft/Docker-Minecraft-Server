@@ -15,6 +15,7 @@ options ares stored in the main Minecraft folder `/minecraft`, these settings wo
 * banned-players.json
 * usercache.json
 * whitelist.json
+* ops.json
 
 To see a demo of this Image being deployed to Azure Container Images, checkout episode 1 of HashiCraft.
 
@@ -162,6 +163,83 @@ WHITELIST_ENABLED=true
 #### Default - true
 
 
+### GAME_MODE
+Sets the game mode for new players.
+Allowed values: "survival", "creative", or "adventure"
+
+```
+GAME_MODE=creative
+```
+
+#### Default - creative
+
+
+### ENABLE_QUERY
+Enables GameSpy4 protocol server listener. Used to get information about server.
+
+```
+ENABLE_QUERY=false
+```
+
+#### Default - false
+
+### PLAYER_IDLE_TIMEOUT
+If non-zero, players are kicked from the server if they are idle for more than that many minutes.
+
+```
+PLAYER_IDLE_TIMEOUT=30
+```
+
+#### Default - 0
+
+
+### DIFFICULTY
+Defines the difficulty (such as damage dealt by mobs and the way hunger and poison affects players) of the server.
+Allowed values: "peaceful", "easy", "normal", "hard"
+
+```
+DIFFICULTY=peaceful
+```
+
+#### Default - easy
+
+
+### SPAWN_MONSTERS
+Determines if monsters can spawn.
+true - Enabled. Monsters appear at night and in the dark.
+false - Disabled. No monsters.
+
+```
+SPAWN_MONSTERS=false
+```
+
+#### Default - false
+
+
+### SPAWN_ANIMALS
+Determines if animals can spawn.
+true - Animals spawn as normal.
+false - Animals immediately vanish.
+
+```
+SPAWN_ANIMALS=false
+```
+
+#### Default - false
+
+
+### SPAWN_NPCS
+Determines if villagers can spawn.
+true - Villagers spawn as normal.
+false - Villagers immediately vanish.
+
+```
+SPAWN_NPCS=false
+```
+
+#### Default - false
+
+
 ## Running locally
 
 ```shell
@@ -170,15 +248,15 @@ docker run \
   -it \
   -p 25565:25565 \
   -p 27015:27015 \
+  -v ${PWD}/mods:/minecraft/mods \
   -v ${PWD}/world:/minecraft/world \
   -v ${PWD}/config:/minecraft/config \
   -e "MINECRAFT_MOTD=Hello World" \
   -e "RCON_ENABLED=true" \
   -e "RCON_PASSWORD=password" \
-  -e "WORLD_BACKUP=https://github.com/nicholasjackson/hashicraft/releases/download/v0.0.0/world2.tar.gz" \
-  hashicraft/minecraft:v1.12.2
+  -e "WORLD_BACKUP=https://github.com/HashiCraft/digital-ocean-deploy/releases/download/v0.0.0/world.tar.gz" \
+  hashicraft/minecraft:v1.16.3
 ```
-
 
 ## Running with Shipyard
 
@@ -196,32 +274,11 @@ Running configuration from:  ./
 
 On initialization the Docker container will download the world and mods and copy these to your local disk:
 
-* ./mc_server/mods == Mine craft mods
-* ./mc_server/world == Mine craft world
+* ./mods == Minecraft mods
+* ./world == Minecraft world
+* ./config == Minecraft config
 
-To reset a world to its default state simply remove the contents of `./mc_server/world`
-
-## Mods
-* Minecraft Chromium Embedded
-* Web Displays
-* Voice Chat (also requires Client install, https://github.com/hashicraft/mc/releases/download/v0.0.1/mods.zip)
-
-## Logs
-```
-➜ docker logs -f minecraft.container.shipyard.run
-Installing default world
-Installing default mods
-2020-04-09 08:14:16,220 main WARN Disabling terminal, you're running in an unsupported environment.
-[08:14:16] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
-```
-
-## RCom server Admin
-The server can be administered with RCom, to run the RCom CLI use the following command
-
-```
-shipyard exec container.minecraft -- rcon-cli --password=password
-> /help
-```
+To reset a world to its default state simply remove the contents of `./world`
 
 ## Building Docker
 To make changes to the docker image you can modify the Dockerfile and entrypoint.sh script then build a new container

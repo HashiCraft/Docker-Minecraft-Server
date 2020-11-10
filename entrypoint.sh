@@ -53,10 +53,15 @@ if [ ! -f "/minecraft/config/whitelist.json" ]; then
   echo "[]" >> /minecraft/config/whitelist.json
 fi
 
+if [ ! -f "/minecraft/config/ops.json" ]; then
+  echo "[]" >> /minecraft/config/ops.json
+fi
+
 ln -s /minecraft/config/banned-ips.json /minecraft/banned-ips.json
 ln -s /minecraft/config/banned-players.json /minecraft/banned-players.json
 ln -s /minecraft/config/usercache.json /minecraft/usercache.json
 ln -s /minecraft/config/whitelist.json /minecraft/whitelist.json
+ln -s /minecraft/config/ops.json /minecraft/ops.json
 
 # Configure the properties
 # Echo the file as it has embedded environment variables

@@ -1,4 +1,13 @@
+network "local" {
+  subnet = "10.10.0.0/16"
+}
+
 container "minecraft" {
+
+  network {
+    name = "network.local"
+  }
+
   image {
     name = "hashicraft/minecraft:v1.16.3"
   }
@@ -23,6 +32,12 @@ container "minecraft" {
     remote = 25565
     host = 25565
   }
+  
+  port {
+    local = 27015
+    remote = 27015
+    host = 27015
+  }
 
   env {
     key = "MINECRAFT_MOTD"
@@ -30,7 +45,7 @@ container "minecraft" {
   }
   
   env {
-    key = "WHITELIST_ENABLE"
+    key = "WHITELIST_ENABLED"
     value = "false"
   }
   
@@ -47,6 +62,11 @@ container "minecraft" {
   # Install default Mods and World
   env {
     key = "WORLD_BACKUP"
-    value = "https://github.com/HashiCraft/digital-ocean-tide/releases/download/v0.0.0/world.tar.gz"
+    value = "https://github.com/HashiCraft/digital-ocean-deploy/releases/download/v0.0.0/world.tar.gz"
+  }
+  
+  env {
+    key = "MODS_BACKUP"
+    value = "https://github.com/HashiCraft/digital-ocean-deploy/releases/download/v0.0.0/mods.tar.gz"
   }
 }
