@@ -4,6 +4,7 @@ spec:
   name: minecraft
   services:
   - name: minecraft-server
+    dockerfile_path: Dockerfile
     git:
       branch: main
       repo_clone_url: https://github.com/HashiCraft/Docker-Minecraft-Server.git
