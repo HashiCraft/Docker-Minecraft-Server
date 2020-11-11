@@ -6,7 +6,7 @@ spec:
   - name: minecraft-server
     dockerfile_path: Dockerfile-app-platform
     git:
-      branch: main
+      branch: deploy
       repo_clone_url: https://github.com/HashiCraft/Docker-Minecraft-Server.git
     http_port: 25565
     internal_ports: [25565]
