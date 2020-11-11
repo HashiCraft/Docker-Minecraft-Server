@@ -1,0 +1,21 @@
+# Reuse the base image for DO App platform as it crates faster builds
+FROM hashicraft/minecraft:v1.16.3
+
+WORKDIR /minecraft
+
+# Set defaults for environment variables
+ENV MINECRAFT_PORT 25565
+ENV RCON_PORT 27015
+ENV JAVA_MEMORY 1G
+ENV RCON_ENABLED false
+ENV WHITELIST_ENABLED true
+ENV ALLOW_NETHER false
+ENV GAME_MODE creative
+ENV ENABLE_QUERY false
+ENV PLAYER_IDLE_TIMEOUT 0
+ENV DIFFICULTY easy
+ENV SPAWN_MONSTERS false
+ENV SPAWN_ANIMALS false
+ENV SPAWN_NPCS false
+
+ENTRYPOINT [ "/minecraft/entrypoint.sh" ]
