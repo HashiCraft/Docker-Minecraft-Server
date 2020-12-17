@@ -240,6 +240,17 @@ SPAWN_NPCS=false
 #### Default - false
 
 
+### ONLINE_MODE
+When set to true, only users with authenticated Mojang accounts are allowed to connect.
+true - Require Mojang account to login.
+false - Does not require a Mojang account to login.
+
+```
+ONLINE_MODE=false
+```
+
+#### Default - true
+
 ## Running locally
 
 ```shell

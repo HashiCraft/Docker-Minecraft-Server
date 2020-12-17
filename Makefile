@@ -1,5 +1,5 @@
 DOCKER_NAME=hashicraft/minecraft
-DOCKER_VERSION=v1.16.3
+DOCKER_VERSION=v1.16.4
 
 build:
 	docker build -t ${DOCKER_NAME}:${DOCKER_VERSION} .

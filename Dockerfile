@@ -11,8 +11,8 @@ RUN wget https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8
   mv rcon-cli /usr/local/bin
 
 # Setup the server
-RUN wget https://github.com/HashiCraft/Docker-Minecraft-Server/releases/download/forge/forge-1.16.3-34.1.0-installer.jar && \
-  java -jar forge-1.16.3-34.1.0-installer.jar --installServer
+RUN wget https://github.com/HashiCraft/Docker-Minecraft-Server/releases/download/forge/forge-1.16.4-35.1.0-installer.jar  && \
+  java -jar forge-1.16.4-35.1.0-installer.jar --installServer
 
 # Copy the signed eula
 COPY ./eula.txt eula.txt
@@ -35,5 +35,6 @@ ENV DIFFICULTY easy
 ENV SPAWN_MONSTERS false
 ENV SPAWN_ANIMALS false
 ENV SPAWN_NPCS false
+ENV ONLINE_MODE true 
 
 ENTRYPOINT [ "/minecraft/entrypoint.sh" ]
